@@ -102,13 +102,40 @@ Prendere un paragrafo abbastanza lungo, contenente diverse frasi. Prendere il pa
 
     <form action="" method="get">
         <label for="name">Nome:</label>
-        <input type="text" id="name">
+        <input type="text" name="name" id="name">
         <label for="mail">Mail:</label>
-        <input type="text" id="mail">
+        <input type="text" name="mail" id="mail">
         <label for="age">Età:</label>
-        <input type="number" id="age">
-        <button>Accedi</button>
+        <input type="number" name="age" id="age">
+        <button type="submit">Accedi</button>
     </form>
+
+    <?php
+        // prendo i parametri dall'URL
+        $name = $_REQUEST['name'];
+        $mail = $_REQUEST['mail'];
+        $age = $_REQUEST['age'];
+        // $dataInserted = $name && $mail && $age;
+        $namelen = strlen($name) > 3;
+        $posAtSign = strpos($email, '@', 1);
+        $posDot = strpos($email, '@', $posAtSign);
+        $ageIsNum = is_int($age);
+
+        if (isset($name, $mail, $age)) {
+
+            if ($namelen && $posAtSign && $posDot && $ageIsNum) {
+                echo '';
+                echo 'Accesso riuscito';
+            } else {
+                echo '';
+                echo 'Accesso negato';
+            }
+
+        } else {
+            echo '';
+            echo 'Accesso negato';
+        }
+    ?>
 
 </body>
 </html>
