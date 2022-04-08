@@ -110,12 +110,12 @@
         $validData = boolval($name) || boolval($mail) || boolval($age);
         $namelen = strlen($name) > 3;
         $posAtSign = strpos($mail, '@', 1);
-        $posDot = strpos($mail, '@', $posAtSign);
+        $posDot = strpos($mail, '.', $posAtSign);
         $ageIsNum = is_numeric($age);
 
-        // echo "<pre>";
-        //     var_dump(boolval($name), boolval($mail), boolval($age), $dataInserted, $namelen, $posAtSign, $posDot, $ageIsNum);
-        // echo "</pre>";
+        echo "<pre>";
+            var_dump($name, $mail, $age, $dataInserted, $namelen, $posAtSign, $posDot, $ageIsNum);
+        echo "</pre>";
 
         // stampo a schermo l'accesso
         if ($dataInserted && $validData) {
