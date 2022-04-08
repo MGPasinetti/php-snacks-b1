@@ -115,12 +115,16 @@ Prendere un paragrafo abbastanza lungo, contenente diverse frasi. Prendere il pa
         $name = $_REQUEST['name'];
         $mail = $_REQUEST['mail'];
         $age = $_REQUEST['age'];
-        // $dataInserted = $name && $mail && $age;
         $namelen = strlen($name) > 3;
         $posAtSign = strpos($email, '@', 1);
         $posDot = strpos($email, '@', $posAtSign);
         $ageIsNum = is_int($age);
 
+        echo "<pre>";
+        var_dump($name, $mail, $age);
+        echo "</pre>";
+
+        // stampo a schermo l'accesso
         if (isset($name, $mail, $age)) {
 
             if ($namelen && $posAtSign && $posDot && $ageIsNum) {
@@ -130,7 +134,7 @@ Prendere un paragrafo abbastanza lungo, contenente diverse frasi. Prendere il pa
             }
 
         } else {
-            echo 'Accesso negato';
+            echo 'Inserisci i dati richiesti';
         }
     ?>
 
