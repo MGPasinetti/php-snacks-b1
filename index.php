@@ -113,9 +113,9 @@
         $posDot = strpos($mail, '.', $posAtSign);
         $ageIsNum = is_numeric($age);
 
-        echo "<pre>";
-            var_dump($name, $mail, $age, $dataInserted, $namelen, $posAtSign, $posDot, $ageIsNum, $validData);
-        echo "</pre>";
+        // echo "<pre>";
+        //     var_dump($name, $mail, $age, $dataInserted, $namelen, $posAtSign, $posDot, $ageIsNum, $validData);
+        // echo "</pre>";
 
         // stampo a schermo l'accesso
         if ($dataInserted && $validData) {
@@ -139,6 +139,35 @@
     -->
     
     <h1>Snack 4</h1>
+
+    <?php 
+        $min = 1;
+        $max = 100;
+        $numItems = 15;
+
+        echo "<pre>";
+            var_dump($min, $max, $numItems);
+        echo "</pre>";
+
+        function getArrayOfIntegers($min, $max, $numItems) {
+
+           $arrRandomNums = [];
+
+           while (count($arrRandomNums) < $numItems) {
+               $num = rand($min, $max);
+
+               if (!in_array($num, $arrRandomNums)) {
+                    $arrRandomNums[] = $num;
+                }
+            }
+
+            return $arrRandomNums;
+        }
+
+        echo "<pre>";
+            var_dump($arrRandomNums);
+        echo "</pre>";
+    ?>
 
     <!--
     SNACK 5
