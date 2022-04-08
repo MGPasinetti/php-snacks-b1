@@ -107,14 +107,14 @@
         $mail = $_REQUEST['mail'];
         $age = $_REQUEST['age'];
         $dataInserted = isset($name, $mail, $age);
-        $validData = boolval($name) || boolval($mail) || boolval($age);
+        $validData = boolval($name) && boolval($mail) && boolval($age);
         $namelen = strlen($name) > 3;
         $posAtSign = strpos($mail, '@', 1);
         $posDot = strpos($mail, '.', $posAtSign);
         $ageIsNum = is_numeric($age);
 
         echo "<pre>";
-            var_dump($name, $mail, $age, $dataInserted, $namelen, $posAtSign, $posDot, $ageIsNum);
+            var_dump($name, $mail, $age, $dataInserted, $namelen, $posAtSign, $posDot, $ageIsNum, $validData);
         echo "</pre>";
 
         // stampo a schermo l'accesso
