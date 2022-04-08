@@ -1,12 +1,3 @@
-<!-- 
-SNACK 2
-Passare come parametri GET name, mail e age e verificare (cercando i metodi che non conosciamo nella documentazione) che name sia più lungo di 3 caratteri, che mail contenga un punto e una chiocciola e che age sia un numero. Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato”
-SNACK 4
-Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà contenere lo stesso numero più di una volta
-SNACK 5
-Prendere un paragrafo abbastanza lungo, contenente diverse frasi. Prendere il paragrafo e suddividerlo in tanti paragrafi. Ogni punto un nuovo paragrafo. 
--->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -115,28 +106,44 @@ Prendere un paragrafo abbastanza lungo, contenente diverse frasi. Prendere il pa
         $name = $_REQUEST['name'];
         $mail = $_REQUEST['mail'];
         $age = $_REQUEST['age'];
+        $dataInserted = isset($name, $mail, $age);
+        $validData = boolval($name) || boolval($mail) || boolval($age);
         $namelen = strlen($name) > 3;
-        $posAtSign = strpos($email, '@', 1);
-        $posDot = strpos($email, '@', $posAtSign);
-        $ageIsNum = is_int($age);
+        $posAtSign = strpos($mail, '@', 1);
+        $posDot = strpos($mail, '@', $posAtSign);
+        $ageIsNum = is_numeric($age);
 
-        echo "<pre>";
-        var_dump($name, $mail, $age);
-        echo "</pre>";
+        // echo "<pre>";
+        //     var_dump(boolval($name), boolval($mail), boolval($age), $dataInserted, $namelen, $posAtSign, $posDot, $ageIsNum);
+        // echo "</pre>";
 
         // stampo a schermo l'accesso
-        if (isset($name, $mail, $age)) {
+        if ($dataInserted && $validData) {
 
-            if ($namelen && $posAtSign && $posDot && $ageIsNum) {
-                echo 'Accesso riuscito';
+            if ($namelen && $posAtSign !== false && $posDot !== false && $ageIsNum) {
+                echo '<h4> Accesso riuscito </h4>';
             } else {
-                echo 'Accesso negato';
+                echo '<h4> Accesso negato </h4>';
             }
 
         } else {
-            echo 'Inserisci i dati richiesti';
-        }
+            echo '<h4> Inserisci tutti i dati richiesti </h4>';
+        } 
     ?>
 
+    <span>-----------------------------------------------------</span>
+
+    <!-- 
+    SNACK 4
+    Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà contenere lo stesso numero più di una volta
+    -->
+    
+    <h1>Snack 4</h1>
+
+    <!--
+    SNACK 5
+    Prendere un paragrafo abbastanza lungo, contenente diverse frasi. Prendere il paragrafo e suddividerlo in tanti paragrafi. Ogni punto un nuovo paragrafo. 
+    -->
+    
 </body>
 </html>
