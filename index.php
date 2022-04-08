@@ -124,15 +124,12 @@ Prendere un paragrafo abbastanza lungo, contenente diverse frasi. Prendere il pa
         if (isset($name, $mail, $age)) {
 
             if ($namelen && $posAtSign && $posDot && $ageIsNum) {
-                echo '';
                 echo 'Accesso riuscito';
             } else {
-                echo '';
                 echo 'Accesso negato';
             }
 
         } else {
-            echo '';
             echo 'Accesso negato';
         }
     ?>
