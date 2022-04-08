@@ -22,6 +22,8 @@ Prendere un paragrafo abbastanza lungo, contenente diverse frasi. Prendere il pa
     Olimpia Milano - Cantù | 55-60 
     -->
 
+    <h1>Snack 1</h1>
+
     <?php 
         $arrMatches = [
             [
@@ -89,9 +91,24 @@ Prendere un paragrafo abbastanza lungo, contenente diverse frasi. Prendere il pa
         } ?>
     </ul>
 
+    <span>-----------------------------------------------------</span>
+
     <!-- 
     SNACK 2
     Passare come parametri GET name, mail e age e verificare (cercando i metodi che non conosciamo nella documentazione) che name sia più lungo di 3 caratteri, che mail contenga un punto e una chiocciola e che age sia un numero. Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato” 
     -->
+
+    <h1>Snack 2</h1>
+
+    <form action="" method="get">
+        <label for="name">Nome:</label>
+        <input type="text" id="name">
+        <label for="mail">Mail:</label>
+        <input type="text" id="mail">
+        <label for="age">Età:</label>
+        <input type="number" id="age">
+        <button>Accedi</button>
+    </form>
+
 </body>
 </html>
