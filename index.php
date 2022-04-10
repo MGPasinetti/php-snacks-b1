@@ -141,38 +141,28 @@
     <h1>Snack 4</h1>
 
     <?php 
-        $min = 1;
-        $max = 100;
-        $numItems = 15;
+
+        $random_nums_array = range(0, 100);
+        shuffle($random_nums_array);
+        $random_nums_array = array_slice($random_nums_array ,0,15);
+
+        // print_r($random_nums_array);
 
         echo "<pre>";
-            var_dump($min, $max, $numItems);
+            var_dump($random_nums_array);
         echo "</pre>";
 
-        function getArrayOfIntegers($min, $max, $numItems) {
-
-           $arrRandomNums = [];
-
-           while (count($arrRandomNums) < $numItems) {
-               $num = rand($min, $max);
-
-               if (!in_array($num, $arrRandomNums)) {
-                    $arrRandomNums[] = $num;
-                }
-            }
-
-            return $arrRandomNums;
-        }
-
-        echo "<pre>";
-            var_dump($arrRandomNums);
-        echo "</pre>";
     ?>
+
+    <span>-----------------------------------------------------</span>
 
     <!--
     SNACK 5
     Prendere un paragrafo abbastanza lungo, contenente diverse frasi. Prendere il paragrafo e suddividerlo in tanti paragrafi. Ogni punto un nuovo paragrafo. 
     -->
+
+    <h1>Snack 5</h1>
+
     
 </body>
 </html>
