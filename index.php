@@ -141,18 +141,31 @@
     <h1>Snack 4</h1>
 
     <?php 
+        $num_elements = isset($_GET['elements']) ? (!is_numeric($_GET['elements']) ? 15 : $_GET['elements']) : 15;
+        $start = isset($_GET['start']) ? (!is_numeric($_GET['start']) ? 0 : $_GET['start']) : 0;
+        $end = isset($_GET['end']) ? (!is_numeric($_GET['end']) ? 100 : $_GET['end']) : 100;
 
-        $random_nums_array = range(0, 100);
-        shuffle($random_nums_array);
-        $random_nums_array = array_slice($random_nums_array ,0,15);
+        $array_random = [];
 
-        // print_r($random_nums_array);
-
-        echo "<pre>";
-            var_dump($random_nums_array);
-        echo "</pre>";
-
+        while (count($array_random) < $num_elements) {
+            $random_number = rand($start, $end);
+            if (in_array($random_number, $array_random) === false) {
+                $array_random[] = $random_number;
+            }
+        }
     ?>
+
+    <form action="" method="get">
+		<label for="start">Start</label>
+		<input type="text" name="start" id="start">
+		<label for="end">End</label>
+		<input type="text" name="end" id="end">
+		<label for="elements">elements</label>
+		<input type="text" name="elements" id="elements">
+		<button>Invia</button>
+	</form>
+
+	<p><?= var_dump($array_random); ?></p>
 
     <span>-----------------------------------------------------</span>
 
