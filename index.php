@@ -163,8 +163,36 @@
 
     <h1>Snack 5</h1>
 
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quam iusto reiciendis corporis, qui officiis dolor quos. Quos laborum harum at porro maiores eum optio laboriosam. Quam aperiam incidunt quas. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus atque in reprehenderit quod, adipisci quaerat aliquam itaque cupiditate quas dignissimos quisquam delectus ex porro, fuga dolore voluptates quibusdam laboriosam odit.</p>
+    <?php 
 
+        $paragraph = 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur aliquam accusamus ipsum neque ab vero, nisi sint aspernatur incidunt voluptas, repellendus laborum quam sed ea rem fugit doloremque quae omnis!
+        Dolorum, consequuntur voluptates, necessitatibus qui, vitae quam eum libero tenetur odio debitis dicta officiis eveniet aspernatur iure itaque facere esse sint! Non delectus numquam quod quos, repellendus temporibus quibusdam officiis.
+        Praesentium, et dolores dicta doloremque eaque nemo accusamus! Velit, odio veritatis aliquid nobis ea eos facere a autem animi obcaecati aperiam dolor, voluptate porro officia soluta maiores. Ratione, vel culpa.
+        Impedit nihil rem ab mollitia laudantium incidunt porro? Ipsam nisi amet excepturi consequatur a tenetur mollitia molestias rem soluta, sequi, voluptatum voluptates temporibus exercitationem cupiditate qui asperiores, facilis adipisci aspernatur!
+        Nisi iure porro doloribus quas nihil fugiat optio itaque eius similique. Qui tempore veniam, vel labore culpa doloribus alias, sit voluptates, ratione maiores odit enim saepe dolor ad pariatur nostrum.
+        Quo numquam architecto quasi atque nesciunt fuga soluta, iure, et repellendus cumque, obcaecati rerum odio tenetur libero recusandae hic! Distinctio corporis eius nam vel architecto ratione possimus consequuntur pariatur rem.
+        Earum blanditiis nostrum, nulla repellendus quas quo atque exercitationem error, illo quia corporis modi magnam deleniti, ullam hic quod possimus deserunt recusandae quasi quidem officia id corrupti? Accusantium, omnis officiis!
+        Omnis natus possimus beatae voluptatem. Saepe odit hic nostrum reiciendis aliquam aliquid molestiae voluptate delectus cupiditate, placeat exercitationem, fugit dolores repudiandae! Cum repellendus eius provident aspernatur sit natus reprehenderit quisquam.
+        Eligendi possimus mollitia rerum nihil beatae eaque aliquid excepturi dignissimos asperiores ipsum incidunt error repudiandae et obcaecati non quis sint rem laudantium odit nesciunt, minima tempore nobis tenetur aperiam. Quas.
+        Expedita, magni accusamus, voluptatibus omnis cumque reiciendis voluptate autem iste architecto quos impedit nulla sequi quaerat natus nam, libero nihil reprehenderit inventore ea cupiditate. Voluptatibus atque totam fugiat nostrum facilis.';
+
+        $with_paragraphs = str_replace('.', '<p></p>', $paragraph);
+
+    ?>
+
+    <h2 style="color: red;">Paragrafo originale</h2>
+
+    <p>
+        <?= $paragraph ?>
+    </p>
+
+    <h2 style="color: green;">Paragrafi ottenuti</h2>
+
+    <p>
+        <?= $with_paragraphs ?>
+    </p>
+
+    <span>-----------------------------------------------------</span>
     
 </body>
 </html>
